@@ -6,4 +6,14 @@ class TweetsController < ApplicationController
   def new
     @tweets = Tweet.new
   end
-end
+
+  def create
+    Tweet.create(tweet_params)
+    redirect_to '/'
+  end
+
+  private
+  def tweet_params
+    params.require(:tweet).permit(:name, :image, :text)
+  end
+end  
