@@ -4,7 +4,7 @@ class TweetsController < ApplicationController
   end
 
   def new
-    @tweets = Tweet.new
+    @tweet = Tweet.new
   end
 
   def create
@@ -32,4 +32,5 @@ class TweetsController < ApplicationController
   def tweet_params
     params.require(:tweet).permit(:name, :image, :text)
   end
+
 end  
